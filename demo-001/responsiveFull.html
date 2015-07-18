@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Responsive full background imagery, Centered text and elements</title>
+		<meta name="Exploring responsive ways to have full background imagery, text and elements (divs etc.)" content="">
+		<link rel="icon" href="icon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
 
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			padding: 0;
+			overflow-x: hidden;
+		}
+		.sections {
+			position: relative;
+			height: 100vh;
+			width: 100vw;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+		#section-1 {
+			background-image: url('cross.jpg');
+			background-position: center;
+			background-size: cover;
+		}
+		#section-2 {
+			background-image: url('deer.jpg');
+			background-position: center;
+			background-size: cover;
+		}
+		#section-3 {
+			background-image: url('boat.jpg');
+			background-position: center;
+			background-size: cover;
+		}
+		@media screen and (max-width:992px){
+			#section-1 {
+				background-image: url('cross_mob.jpg');
+			}
+			#section-2 {
+				background-image: url('deer_mob.jpg');
+			}
+			#section-3 {
+				background-image: url('boat_mob.jpg');
+			}
+		}
+		.content-wrapper {
+			color: white;
+			position: absolute;
+			margin: 0 auto;
+			padding: 0;
+			width: 60%;
+			top: 50%;
+			transform: translateY(-50%);
+			-webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-o-transform: translateY(-50%);
+			left: 0;
+			right: 0;
+		}
+		h2 {
+			font-family: 'Ubuntu', "Book Antiqua", 'Sans-serif';
+			font-size: 6vmax;
+			font-weight: 500;
+			margin: 15px 0 auto;
+		}
+		.text-para1 {
+			font-family: 'Garamond', 'Ubuntu';
+			font-weight: 300;
+			font-size: 3vmax;
+			margin: 0;
+		}
+		.text-para2 {
+			font-family: 'Garamond', 'Ubuntu';
+			font-weight: 100;
+			font-size: 2vmax;
+			margin: 0;
+		}
+		.divider {
+			background-color: white;
+			height: 1px;
+			width: 45vw;
+			margin: 15px auto;
+			padding: 0;
+		}
+		.divider2 {
+			width: 50vw;
+			height: auto;
+		}
+		.portrait {
+			width: 30vmin;
+			height: auto;
+		}
+	</style>
+	</head>
+
+	<body>
+		<div class="sections" id="section-1">
+			<div class="content-wrapper">
+				<h2>OPENING SECTION</h2>
+				<div class="divider"></div>
+				<p class="text-para1">Some text to discuss apologetics</p>
+				<p class="text-para2">pic courtesy of www.unsplash.com</p>
+			</div>
+		</div>
+		<div class="sections" id="section-2">
+			<div class="content-wrapper">
+				<h2>SECOND SECTION</h2>
+				<img src="divider.png" class="divider2" />
+				<p class="text-para1">More text to talk of the deer and whatever else</p>
+				<p class="text-para2">pic courtesy of www.unsplash.com</p>
+			</div>
+		</div>
+		<div class="sections" id="section-3">
+			<div class="content-wrapper">
+				<img src="portrait.png" class="portrait" />
+				<h2>NAME &amp; SURNAME</h2>
+				<img src="divider.png" class="divider2" />
+				<p class="text-para1">Some other text goes here</p>
+			</div>
+		</div>
+	</body>
+
+</html>
