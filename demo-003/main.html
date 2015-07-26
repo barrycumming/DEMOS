@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery Smooth Scroll Tut</title>
+		<meta name="Exploring ways to smooth scroll to an anchor on a different page" content="">
+		<meta name="TC" content="Web Development Tutorial">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<link rel="icon" href="www.tatenda.info/wp-content/themes/myTheme/images/icon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+		<link href="main.css" rel="stylesheet" type="text/css" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+		<script src="jquery-ui.js"></script>
+
+		<script type="text/javascript">
+			$('html').css({display: 'none'});
+
+			$(document).ready(function(){
+				var hashURL = location.hash;
+				if(hashURL != '' && hashURL.length > 1){
+					$('html, body').scrollTop(0);
+					$('html').css({display: 'block'});
+					smoothScrollTo(hashURL);
+				} else {
+					$('html').css({display: 'block'});
+				}
+			});
+
+			/**
+			 * Method smooth scrolls to given anchor point
+			 */
+			function smoothScrollTo(anchor) {
+				var duration = 5000; //time (milliseconds) it takes to reach anchor point
+				var targetY = $(anchor).offset().top;
+				$("html, body").animate({
+					"scrollTop" : targetY
+				}, duration, 'easeInOutCubic');
+			}
+		</script>
+
+		<style>
+			nav {
+				position: fixed;
+				z-index: 100;
+				width: 100%;
+				background-color: #76101e;
+				text-align: left;
+				font-family: Ubuntu, 'Sans-Serif', Times, Arial;
+				font-size: 1.2em;
+				padding: 15px;
+				border-bottom: 5px solid #580c17;
+			}
+			nav a {
+				padding: 15px 15px 15px 15px;
+				text-decoration: none;
+				color: #fdeef0;
+			}
+			nav a:hover {
+				background-color: #580c17;
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav>
+			<a href="#section-1">Section 1</a>
+			<a href="#section-2">Section 2</a>
+			<a href="#section-3">Section 3</a>
+			<a href="#section-4">Section 4</a>
+			<a href="#section-5">Section 5</a>
+		</nav>
+		<div class="section-wrapper">
+			<div class="sections" id="section-1">
+				<div class="content-wrapper">
+					<h2>#SECTION-1</h2>
+					<div class="divider"></div>
+					<p class="text-para1">Some text to talk about balloons</p>
+					<p class="text-para2">pic courtesy of www.unsplash.com</p>
+				</div>
+			</div>
+			<div class="sections" id="section-2">
+				<div class="content-wrapper">
+					<h2>#SECTION-2</h2>
+					<div class="divider"></div>
+					<p class="text-para1">Some text to talk about surreal lake pic</p>
+					<p class="text-para2">pic courtesy of www.unsplash.com</p>
+				</div>
+			</div>
+			<div class="sections" id="section-3">
+				<div class="content-wrapper">
+					<h2>#SECTION-3</h2>
+					<div class="divider"></div>
+					<p class="text-para1">Some text to discuss apologetics</p>
+					<p class="text-para2">pic courtesy of www.unsplash.com</p>
+				</div>
+			</div>
+			<div class="sections" id="section-4">
+				<div class="content-wrapper">
+					<h2>#SECTION-4</h2>
+					<div class="divider"></div>
+					<p class="text-para1">Some text to debate what the deer is staring at</p>
+					<p class="text-para2">pic courtesy of www.unsplash.com</p>
+				</div>
+			</div>
+			<div class="sections" id="section-5">
+				<div class="content-wrapper">
+					<h2>#SECTION-5</h2>
+					<div class="divider"></div>
+					<p class="text-para1">Some text to talk about sunsets</p>
+					<p class="text-para2">pic courtesy of www.unsplash.com</p>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//animating navbar buttons
+			$('a[href^="#"]').bind('click', function(event){
+				var anchor = $(this).attr('href');
+				smoothScrollTo(anchor);
+				return false;
+			});
+		</script>
+	</body>
+</html>

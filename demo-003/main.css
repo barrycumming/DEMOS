@@ -1,0 +1,94 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+.sections {
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.content-wrapper {
+	color: white;
+	position: absolute;
+	margin: 0 auto;
+	padding: 0;
+	width: 60%;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	left: 0;
+	right: 0;
+}
+h2 {
+	font-family: 'Ubuntu', "Book Antiqua", 'Sans-serif';
+	font-size: 6vmax;
+	font-weight: 500;
+	margin: 15px 0 auto;
+}
+.text-para1 {
+	font-family: 'Garamond', 'Ubuntu';
+	font-weight: 300;
+	font-size: 3vmax;
+	margin: 0;
+}
+.text-para2 {
+	font-family: 'Garamond', 'Ubuntu';
+	font-weight: 100;
+	font-size: 2vmax;
+	margin: 0;
+}
+.divider {
+	background-color: white;
+	height: 1px;
+	width: 45vw;
+	margin: 15px auto;
+	padding: 0;
+}
+#section-1 {
+	background-image: url('smoothScrollImages/balloons.jpg');
+	background-size: cover;
+}
+#section-2 {
+	background-image: url('smoothScrollImages/boat.jpg');
+	background-size: cover;
+}
+#section-3 {
+	background-image: url('smoothScrollImages/cross.jpg');
+	background-size: cover;
+}
+#section-4 {
+	background-image: url('smoothScrollImages/deer.jpg');
+	background-size: cover;
+}
+#section-5 {
+	background-image: url('smoothScrollImages/sunset.jpg');
+	background-size: cover;
+}
+@media (max-width:992px){
+	#section-1 {
+		background-image: url('smoothScrollImages/balloons_mob.jpg');
+		background-size: cover;
+	}
+	#section-2 {
+		background-image: url('smoothScrollImages/boat_mob.jpg');
+		background-size: cover;
+	}
+	#section-3 {
+		background-image: url('smoothScrollImages/cross_mob.jpg');
+		background-size: cover;
+	}
+	#section-4 {
+		background-image: url('smoothScrollImages/deer_mob.jpg');
+		background-size: cover;
+	}
+	#section-5 {
+		background-image: url('smoothScrollImages/sunset_mob.jpg');
+		background-size: cover;
+	}
+}
